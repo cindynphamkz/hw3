@@ -24,6 +24,7 @@
             <label for="cDesc" class="form-label">Course Description</label>
             <input type="text" class="form-control" id="cDesc" name="cDesc">
           </div>
+            <input type="hidden" name="actionType" value="Add">
           <button type="submit" class="btn btn-primary">Save</button>
         </form>
       </div>
