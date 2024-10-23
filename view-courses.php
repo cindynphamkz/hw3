@@ -1,8 +1,3 @@
-<head>
-  <!-- Include Bootstrap Icons CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
-</head>
-<body>
 <div class="row">
   <div class="col">
 <h1>Courses</h1>
