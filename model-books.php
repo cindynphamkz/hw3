@@ -43,6 +43,19 @@ function selectBooksByAuthor($authorId) {
     return $result;
 }
 
+// Function to count books by author
+function countBooksByAuthor($authorId) {
+    $conn = get_db_connection();
+    $stmt = $conn->prepare("SELECT COUNT(*) as book_count FROM Books WHERE AuthorID = ?");
+    $stmt->bind_param("i", $authorId);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $count = $result->fetch_assoc()['book_count'];
+    $stmt->close();
+    $conn->close();
+    return $count;
+}
+
 // Function to add a new book
 function addBook($title, $genre, $authorid) {
     $conn = get_db_connection();
