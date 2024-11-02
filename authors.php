@@ -50,6 +50,7 @@ $authors = selectAuthors();
                 <td><?php echo htmlspecialchars($author['name']); ?></td>
                 <td><?php echo htmlspecialchars($author['bio']); ?></td>
                 <td>
+                    <a href="books-by-author.php?id=<?php echo $author['authorid']; ?>" class="btn btn-info">View Books</a> <!-- Added View Books link -->
                     <a href="edit-author.php?id=<?php echo $author['authorid']; ?>" class="btn btn-warning">Edit</a>
                     <a href="delete-author.php?id=<?php echo $author['authorid']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this author?')">Delete</a>
                 </td>
