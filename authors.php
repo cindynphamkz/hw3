@@ -20,7 +20,7 @@ $authors = selectAuthors();
         <tbody>
             <?php while ($author = $authors->fetch_assoc()): ?>
             <tr>
-                <td><?php echo $author['author_id']; ?></td>
+                <td><?php echo $author['authorid']; ?></td>
                 <td><?php echo htmlspecialchars($author['name']); ?></td>
                 <td><?php echo htmlspecialchars($author['bio']); ?></td>
                 <td><a href="books-by-author.php?id=<?php echo $author['author_id']; ?>">View Books</a></td>
