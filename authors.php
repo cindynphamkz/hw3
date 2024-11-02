@@ -3,7 +3,6 @@ require_once("model-authors.php");
 $pageTitle = "Authors";
 include "view-header.php";
 
-// Retrieve authors
 $authors = selectAuthors();
 ?>
 
