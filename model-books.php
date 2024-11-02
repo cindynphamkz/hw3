@@ -1,14 +1,12 @@
 <?php
 require_once("db.php");
 
-// Function to select books by genre (used in books.php)
 function selectBooksByGenre($genre) {
     $conn = get_db_connection();
     if (!$conn) {
         die("Database connection failed.");
     }
 
-    // Check if a specific genre was selected
     if ($genre) {
         $stmt = $conn->prepare("SELECT BookID, AuthorID, Title, Genre FROM Books WHERE genre = ?");
         $stmt->bind_param("s", $genre);
@@ -32,7 +30,6 @@ function selectBooksByGenre($genre) {
     return $result;
 }
 
-// Function to select books by author (used in books-by-author.php)
 function selectBooksByAuthor($authorId) {
     $conn = get_db_connection();
     if (!$conn) {
