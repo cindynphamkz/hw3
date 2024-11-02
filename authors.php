@@ -23,7 +23,7 @@ $authors = selectAuthors();
                 <td><?php echo $author['authorid']; ?></td>
                 <td><?php echo htmlspecialchars($author['name']); ?></td>
                 <td><?php echo htmlspecialchars($author['bio']); ?></td>
-                <td><a href="books-by-author.php?id=<?php echo $author['author_id']; ?>">View Books</a></td>
+                <td><a href="books-by-author.php?id=<?php echo $author['authorid']; ?>">View Books</a></td>
             </tr>
             <?php endwhile; ?>
         </tbody>
