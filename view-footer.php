@@ -1,7 +1,7 @@
     </div> <!-- Close container div from header -->
     <footer class="bg-light text-center text-lg-start mt-5">
         <div class="text-center p-3" style="background-color: #f8f9fa;">
-            &copy; <?php echo date("Y"); ?> Your Website Name. All rights reserved.
+            &copy; <?php echo date("Y"); ?> Cindy P. All rights reserved.
         </div>
     </footer>
 
