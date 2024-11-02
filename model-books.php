@@ -1,7 +1,6 @@
 <?php
 require_once("db.php");
 
-// Function to select books by genre
 function selectBooksByGenre($genre) {
     $conn = get_db_connection();
     if ($genre) {
@@ -17,7 +16,6 @@ function selectBooksByGenre($genre) {
     return $result;
 }
 
-// Function to select books by author
 function selectBooksByAuthor($authorId) {
     $conn = get_db_connection();
     if (!$conn) {
@@ -43,7 +41,6 @@ function selectBooksByAuthor($authorId) {
     return $result;
 }
 
-// Function to count books by author
 function countBooksByAuthor($authorId) {
     $conn = get_db_connection();
     $stmt = $conn->prepare("SELECT COUNT(*) as book_count FROM Books WHERE AuthorID = ?");
@@ -56,7 +53,6 @@ function countBooksByAuthor($authorId) {
     return $count;
 }
 
-// Function to add a new book
 function addBook($title, $genre, $authorid) {
     $conn = get_db_connection();
     $stmt = $conn->prepare("INSERT INTO Books (Title, Genre, AuthorID) VALUES (?, ?, ?)");
@@ -66,7 +62,6 @@ function addBook($title, $genre, $authorid) {
     $conn->close();
 }
 
-// Function to get a single book by ID
 function getBookById($bookid) {
     $conn = get_db_connection();
     $stmt = $conn->prepare("SELECT BookID, Title, Genre, AuthorID FROM Books WHERE BookID = ?");
@@ -79,7 +74,6 @@ function getBookById($bookid) {
     return $book;
 }
 
-// Function to update an existing book
 function updateBook($bookid, $title, $genre, $authorid) {
     $conn = get_db_connection();
     $stmt = $conn->prepare("UPDATE Books SET Title = ?, Genre = ?, AuthorID = ? WHERE BookID = ?");
@@ -89,7 +83,6 @@ function updateBook($bookid, $title, $genre, $authorid) {
     $conn->close();
 }
 
-// Function to delete a book by ID
 function deleteBook($bookid) {
     $conn = get_db_connection();
     $stmt = $conn->prepare("DELETE FROM Books WHERE BookID = ?");
