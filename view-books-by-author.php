@@ -21,8 +21,8 @@
             <tbody>
                 <?php while ($book = $books->fetch_assoc()): ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($book['title']); ?></td>
-                        <td><?php echo htmlspecialchars($book['genre']); ?></td>
+                        <td><?php echo isset($book['Title']) ? htmlspecialchars($book['Title']) : 'N/A'; ?></td>
+                        <td><?php echo isset($book['Genre']) ? htmlspecialchars($book['Genre']) : 'N/A'; ?></td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
