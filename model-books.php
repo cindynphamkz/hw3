@@ -19,7 +19,7 @@ function selectBooks() {
     if (!$conn) {
         die("Database connection failed.");
     }
-    $stmt = $conn->prepare("SELECT book_id, title, genre FROM books");
+    $stmt = $conn->prepare("SELECT bookid, authorid, title, genre FROM `Books`;");
     $stmt->execute();
     $result = $stmt->get_result();
     $conn->close();
