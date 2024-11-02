@@ -22,7 +22,10 @@
                         <a class="nav-link" href="books.php">Books</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="books-by-author.php">Books by Author</a> <!-- New Tab -->
+                        <a class="nav-link" href="books-by-author.php">Books by Author</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="authors-chart.php">Authors Chart</a> <!-- New Tab for Authors Chart -->
                     </li>
                 </ul>
             </div>
