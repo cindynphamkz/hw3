@@ -1,8 +1,8 @@
 <?php
 // db.php
 $host = '138.197.17.168'; // Replace with 'localhost' if it's hosted locally
-$dbname = 'cindypha_hw3'; // Database name as provided
-$username = 'cindypha'; // Your username
+$dbname = 'cindypham_hw3'; // Database name as provided
+$username = 'cindypham'; // Your username
 $password = 'Otis649kazuha'; // Replace with your actual password
 
 try {
