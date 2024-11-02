@@ -17,6 +17,32 @@ function selectBooksByGenre($genre) {
     return $result;
 }
 
+// Function to select books by author
+function selectBooksByAuthor($authorId) {
+    $conn = get_db_connection();
+    if (!$conn) {
+        die("Database connection failed.");
+    }
+
+    $stmt = $conn->prepare("SELECT BookID, Title, Genre FROM Books WHERE AuthorID = ?");
+    if (!$stmt) {
+        die("Query preparation failed: " . $conn->error);
+    }
+
+    $stmt->bind_param("i", $authorId);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+    if (!$result) {
+        die("Getting result set failed: " . $stmt->error);
+    }
+
+    $stmt->close();
+    $conn->close();
+
+    return $result;
+}
+
 // Function to add a new book
 function addBook($title, $genre, $authorid) {
     $conn = get_db_connection();
