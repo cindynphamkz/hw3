@@ -10,7 +10,7 @@ function selectAuthors() {
     }
 
     // Prepare the SQL query
-    $stmt = $conn->prepare("SELECT author_id, name, bio FROM authors");
+    $stmt = $conn->prepare("SELECT author_id, name, bio FROM 'authors'");
     if (!$stmt) {
         die("Query preparation failed: " . $conn->error);
     }
