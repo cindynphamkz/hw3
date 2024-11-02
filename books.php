@@ -1,14 +1,12 @@
 <?php
 require_once("model-books.php");
-require_once("model-authors.php"); // To retrieve authors for the dropdown
+require_once("model-authors.php");
 $pageTitle = "Books";
 include "view-header.php";
 
-// Retrieve books based on genre if filtered
 $genre = isset($_POST['genre']) ? $_POST['genre'] : '';
 $books = selectBooksByGenre($genre);
 
-// Fetch authors for the dropdown in the add book form
 $authors = selectAuthors();
 ?>
 
