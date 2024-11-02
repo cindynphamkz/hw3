@@ -6,7 +6,7 @@ function selectBooksByAuthor($authorId) {
     if (!$conn) {
         die("Database connection failed.");
     }
-    $stmt = $conn->prepare("SELECT book_id, title, genre FROM books WHERE author_id = ?");
+    $stmt = $conn->prepare("SELECT bookid, title, genre FROM books WHERE authorid = ?");
     $stmt->bind_param("i", $authorId);
     $stmt->execute();
     $result = $stmt->get_result();
