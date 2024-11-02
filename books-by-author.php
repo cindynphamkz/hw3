@@ -20,7 +20,7 @@ $books = selectBooksByAuthor($authorId);
         <tbody>
             <?php while ($book = $books->fetch_assoc()): ?>
             <tr>
-                <td><?php echo $book['book_id']; ?></td>
+                <td><?php echo $book['bookid']; ?></td>
                 <td><?php echo htmlspecialchars($book['title']); ?></td>
                 <td><?php echo htmlspecialchars($book['genre']); ?></td>
             </tr>
