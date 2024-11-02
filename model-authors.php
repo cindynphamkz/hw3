@@ -1,7 +1,6 @@
 <?php
 require_once("db.php");
 
-// Function to select all authors
 function selectAuthors() {
     $conn = get_db_connection();
     $stmt = $conn->prepare("SELECT authorid, name, bio FROM Authors;");
@@ -12,7 +11,6 @@ function selectAuthors() {
     return $result;
 }
 
-// Function to add a new author
 function addAuthor($name, $bio) {
     $conn = get_db_connection();
     $stmt = $conn->prepare("INSERT INTO Authors (name, bio) VALUES (?, ?)");
@@ -22,7 +20,6 @@ function addAuthor($name, $bio) {
     $conn->close();
 }
 
-// Function to get a single author by ID
 function getAuthorById($authorid) {
     $conn = get_db_connection();
     $stmt = $conn->prepare("SELECT authorid, name, bio FROM Authors WHERE authorid = ?");
@@ -35,7 +32,6 @@ function getAuthorById($authorid) {
     return $author;
 }
 
-// Function to update an existing author
 function updateAuthor($authorid, $name, $bio) {
     $conn = get_db_connection();
     $stmt = $conn->prepare("UPDATE Authors SET name = ?, bio = ? WHERE authorid = ?");
@@ -45,7 +41,6 @@ function updateAuthor($authorid, $name, $bio) {
     $conn->close();
 }
 
-// Function to delete an author by ID
 function deleteAuthor($authorid) {
     $conn = get_db_connection();
     $stmt = $conn->prepare("DELETE FROM Authors WHERE authorid = ?");
