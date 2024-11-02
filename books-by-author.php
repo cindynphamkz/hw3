@@ -3,10 +3,8 @@ require_once("model-books.php");
 $pageTitle = "Books by Author";
 include "view-header.php";
 
-// Get the author ID from the URL parameter
 $authorId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
-// Fetch the books for this author
 $books = selectBooksByAuthor($authorId);
 
 echo "<h1>Books by Author</h1>";
