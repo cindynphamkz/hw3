@@ -23,7 +23,7 @@ if ($books && $books->num_rows > 0) {
 
     echo "</tbody></table>";
 } else {
-    echo "<p>Choose an author.</p>";
+    echo "<p>Choose an author on the Authors page.</p>";
 }
 
 include "view-footer.php";
