@@ -3,12 +3,10 @@ require_once("model-authors.php");
 $pageTitle = "Authors Chart";
 include "view-header.php";
 
-// Fetch authors data
 $authors = selectAuthors();
 $authorNames = [];
 $bookCounts = [];
 
-// Assuming you have a function that counts books per author
 require_once("model-books.php");
 while ($author = $authors->fetch_assoc()) {
     $authorNames[] = $author['name'];
